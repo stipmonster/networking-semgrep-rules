@@ -8,7 +8,7 @@ Pull requests are welcome.
 
 ## TODO:
 
-- [] add arista checks
-- [] split checks to asa/ios/iosxr/nxos
+- [ ] add arista checks
+- [ ] split checks to asa/ios/iosxr/nxos
 
 
