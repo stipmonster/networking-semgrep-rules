@@ -1,0 +1,9 @@
+---
+service:
+  - id: Disable service config
+    languages:
+      - generic
+    message: "Issue no service config"
+    patterns:
+      - pattern: no service config
+    severity: WARNING

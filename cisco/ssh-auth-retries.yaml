@@ -1,0 +1,12 @@
+---
+rules:
+  - id: ssh authentication retries
+    languages:
+      - generic
+    message: "Authentication retries lower then 5"
+    patterns:
+      - pattern: ip ssh authentication-retries $COUNT
+      - metavariable-comparison:
+          comparison: $COUNT > 5
+          metavariable: $COUNT
+    severity: WARNING

@@ -1,0 +1,20 @@
+---
+rules:
+  - id: exec-timeout-to-high
+    patterns:
+      - pattern-not: exec-timeout $TIME
+      - pattern-inside: line ...
+      - metavariable-comparison:
+          comparison: $TIME > 5
+          metavariable: $TIME
+    message: Exec timeout is larger then 5 min
+    severity: ERROR
+  - id: exec-timeout-missing
+    patterns:
+      - pattern: line
+      - pattern-not-inside: |
+          line
+          ...
+          exec-timeout
+    message: Exec timeout is missing
+    severity: ERROR

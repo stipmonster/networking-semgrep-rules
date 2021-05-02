@@ -1,0 +1,10 @@
+---
+rules:
+  - id: ssh-version-2
+    languages:
+      - generic
+    message: "ssh version 2 is not set"
+    patterns:
+      - pattern: ssh version 1
+      - pattern-not: ssh version 2
+    severity: ERROR

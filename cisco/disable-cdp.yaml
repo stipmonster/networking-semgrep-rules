@@ -1,0 +1,17 @@
+---
+rules:
+  - id: Disable-cdp
+    patterns:
+      - pattern-either:
+      - pattern: |
+            interface $NAME
+            ...
+            !
+      - pattern-not: |
+          interface $NAME
+          ...
+          no cpd run
+          ...
+          !
+    message: Issue no cdp run on $NAME
+    severity: ERROR
