@@ -1,0 +1,10 @@
+---
+rules:
+  - id: switchport-mode
+    patterns:
+      - pattern: interface
+      - pattern-not-inside: |
+          interface ...
+          switchport mode
+    message: switchport mode is missing
+    severity: ERROR

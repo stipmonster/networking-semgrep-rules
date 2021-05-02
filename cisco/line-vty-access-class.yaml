@@ -1,0 +1,11 @@
+---
+rules:
+  - id: vty-access-class-missing
+    patterns:
+      - pattern: line vty
+      - pattern-not-inside: |
+          line vty
+          ...
+          access-class ... in
+    message: Exec timeout is missing
+    severity: ERROR

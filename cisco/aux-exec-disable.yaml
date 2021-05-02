@@ -1,0 +1,11 @@
+---
+rules:
+  - id: aux-exec-disable
+    patterns:
+      - pattern-not-inside: |
+          line aux
+          ...
+          no exec
+      - pattern: line aux
+    message: exec is enabled on aux port
+    severity: ERROR
