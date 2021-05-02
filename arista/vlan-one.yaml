@@ -1,0 +1,11 @@
+---
+rules:
+  - id: vlan-one-trunk-group
+    patterns:
+      - pattern: vlan 1
+      - pattern-not-inside: |
+          vlan 1
+          ...
+          trunk group
+    message: Exec timeout is missing
+    severity: ERROR

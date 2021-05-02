@@ -1,0 +1,20 @@
+---
+rules:
+  - id: exec-timeout-to-high
+    patterns:
+      - pattern-not: idle-timeout $TIME
+      - pattern-inside: management console ...
+      - metavariable-comparison:
+          comparison: $TIME > 5
+          metavariable: $TIME
+    message: Exec timeout is larger then 5 min
+    severity: ERROR
+  - id: exec-timeout-missing
+    patterns:
+      - pattern: management console ...
+      - pattern-not-inside: |
+          management console
+          ...
+          idle-timeout
+    message: Exec timeout is missing
+    severity: ERROR
